@@ -1,0 +1,15 @@
+.card{
+    width: 300px;
+    height: 350px;
+    border: 1px solid grey;
+    padding: 10px;
+    box-shadow: 3px 3px 5px gray;
+    margin: 7px;
+    border: none;
+    border-radius: 5px;
+}
+.player-img{
+    width: 100px;
+    
+
+}
