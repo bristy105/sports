@@ -5,9 +5,13 @@ import './Home.css'
 const Home = () => {
     const [players, setPlayers] = useState([])
     const [search, setSearch] = useState('');
+    const [cart,setCart] = useState([]);
     
     const handleChange = (e) =>{
         setSearch(e.target.value)
+    }
+    const handleDelete = (id) =>{
+        console.log(id)
     }
 
     useEffect(()=>{
@@ -15,7 +19,7 @@ const Home = () => {
         .then(res=>res.json())
         .then(data=>setPlayers(data?.player));
     },[search])
-    //console.log(players)
+   
 
     return (
         <div>
@@ -25,11 +29,29 @@ const Home = () => {
                     <input onChange={(e)=>handleChange(e)} type="text" className='search' />
                     <button className='search-btn'>Search</button>
                     <div className="players-container">
-                        <Players players={players}></Players>
+                        <Players 
+                        players={players}
+                       
+                        cart ={cart}
+                        setCart ={setCart}
+
+                        
+                        ></Players>
                     </div>
                 </div>
                 <div className="right-cont">
-                    <div className="cart">Player cart</div>
+                    <div className="cart">
+                    {cart?.map((p)=>(
+                        <div className="cart-info-container">
+                            <li>{p?.idPlayer}</li>
+                            <button onClick={()=>handleDelete(p?.idPlayer)} className='delete-btn'>x</button>
+                      
+
+                        </div>                        
+                        
+                        
+                    ))}
+                    </div>
                 </div>
             </div>
         </div>

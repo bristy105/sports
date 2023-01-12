@@ -2,7 +2,7 @@ import React from 'react';
 import SinglePlayer from '../SinglePlayer/SinglePlayer';
 import './Players.css'
 
-const Players = ({players}) => {
+const Players = ({players, cart, setCart}) => {
     //console.log(players)
     return (
         <div className='players-container'>
@@ -11,8 +11,9 @@ const Players = ({players}) => {
                   
                     <SinglePlayer 
                     key = {pd?.idPlayer}
-                    player = {pd}>
-
+                    player = {pd}
+                    cart = {cart}
+                    setCart = {setCart}>
                     </SinglePlayer>
 
                 ))}

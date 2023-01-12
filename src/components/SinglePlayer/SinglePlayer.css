@@ -13,3 +13,11 @@
     
 
 }
+.card-btn{
+    margin: 5px;
+    border: none;
+    background-color: blueviolet;
+    color: white;
+    padding: 9px 14px;
+    border-radius: 3px;
+}
